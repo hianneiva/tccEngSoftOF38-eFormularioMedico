@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="primary" class="ion-float-right">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+          </ion-buttons>
+      <ion-title>Paciente</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <ion-grid class="full-height">
+        <ion-row class="ion-align-items-center ion-justify-content-center full-height">
+          <ion-card class="ion-padding">
+            <!-- Input for Pacient Data-->
+
+            <form [formGroup]="patientForm" (ngSubmit)="logForm()">
+              <ion-item>
+                  <ion-label position="stacked">Nome</ion-label>
+                  <ion-input inputmode="text" type="text" formControlName="name"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="stacked">Matrícula</ion-label>
+                  <ion-input inputmode="text" type="text" formControlName="id"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="stacked">Idade</ion-label>
+                  <ion-input inputmode="text" type="number" formControlName="age"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="stacked">Sexo</ion-label>
+                  <ion-select formControlName="sex" interface="popover">
+                    <ion-select-option *ngFor="let sex of sexEnum" value="{{sex}}">{{sex}}</ion-select-option>
+                  </ion-select>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label position="stacked">Estado Civil</ion-label>
+                  <ion-select formControlName="maritalStatus" interface="popover">
+                      <ion-select-option *ngFor="let ms of msEnum" value="{{ms}}">{{ms}}</ion-select-option>
+                  </ion-select>
+              </ion-item>
+            </form>
+            <br>
+
+            <ion-button expand="block" (click)="logForm()">
+              Continuar
+            </ion-button>
+          </ion-card>
+        </ion-row>
+      </ion-grid>
+</ion-content>
