@@ -81,7 +81,7 @@ export class PacientInputPage implements OnInit {
       currentPatient.sex = this.patientForm.value.sex;
       currentPatient.maritalStatus = this.patientForm.value.maritalStatus;
 
-      let navExtra: NavigationExtras = { state: { patient: currentPatient}}
+      const navExtra: NavigationExtras = { state: { patient: currentPatient}}
       this.router.navigate(['form-list'], navExtra);
     }
   }

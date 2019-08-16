@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { Constants } from '../model/constants';
 import { Patient } from '../model/pacient';
 
 @Component({
-  selector: 'app-form-list',
-  templateUrl: './form-list.page.html',
-  styleUrls: ['./form-list.page.scss'],
+  selector: 'app-form-sf36',
+  templateUrl: './form-sf36.page.html',
+  styleUrls: ['./form-sf36.page.scss'],
 })
-export class FormListPage implements OnInit {
+export class FormSF36Page implements OnInit {
 
-  public formList = Constants.inputformList;
-  
   private patientData: Patient;
 
   constructor(private router: Router) { }
@@ -26,9 +23,9 @@ export class FormListPage implements OnInit {
     }
   }
 
-  goTo(path: string){
+  goBack(){
     const navExtra: NavigationExtras = { state: { patient: this.patientData }}
-    this.router.navigate([path], navExtra);
+    this.router.navigate(['form-list'], navExtra);
   }
 
 }

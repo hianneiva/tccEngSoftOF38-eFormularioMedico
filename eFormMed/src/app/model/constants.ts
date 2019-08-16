@@ -6,8 +6,13 @@ export class Constants {
         "Divorciado(a)",
         "Viúvo(a)"
     ];
+
     public static readonly sexes = [
         "Masculino",
         "Feminino"
+    ];
+
+    public static readonly inputformList = [
+        { name: "SF-36", path: "form-sf36" }
     ];
 }

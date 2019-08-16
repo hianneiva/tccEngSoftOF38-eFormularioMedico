@@ -1,9 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>formList</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary" class="ion-float-right">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="pacient-input"></ion-back-button>
+          </ion-buttons>
+      <ion-title>Questionários e Formulários</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let form of formList" (click)="goTo(form.path)">{{form.name}}</ion-item>
+  </ion-list>
 </ion-content>
